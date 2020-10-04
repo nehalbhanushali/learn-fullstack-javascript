@@ -1,15 +1,17 @@
 import config from './config';
-import fs from 'fs';
-import express from 'express';
+import apiRouter from './api';
 
+import express from 'express';
 const server = express();
 
 // routing
-// TODO: manage group of routes in their own module
-// e.g: All API requests to be managed in /api/index.js
 server.get('/', (req, res) => {
     res.send('Hello Express');
  });
+
+// Now use it like express middleware
+// args: 1. Route prefix, 2. apiRouter
+server.use('/api', apiRouter);
 
 // use static middleware to automatically serve static assets like this about.html
 // public is where we want to host the static assets on the file system

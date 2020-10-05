@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nehalbhanushali/learn-fullstack-javascript#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
     "prop-types": "^15.7.2",

@@ -2,29 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'; 
 
-const App = (props) => {
+// TODO : 
+// did not get the linting error like in the video  for
+// The props might need to be added to some kind of validation
+// components not composed
+
+// see the prop is de-structured
+// TODO: install react extention on the browser
+const Header = ({ message }) => {
     return (
-        // TODO: components composability
-        <h2 className='text-center'> 
-            {props.headerMessage}
+        // Assign classNames matching component name
+        <h2 className='Header text-center'> 
+        {message}
         </h2>
     );
 };
 
-// The props might need to be added to some kind of validation
-// did not get the linting error like in the video because it is 
-// probably covered in newer dependency versions
-App.propTypes = {
-    headerMessage: PropTypes.string,
+Header.propTypes = {
+    message: PropTypes.string,
 };
 
-App.defaultProps = {
-    headerMessage: "Hello!!",
+const App = () => {
+    return (
+        // Assign classNames matching component name
+        <div className='App'>
+       
+         <Header message='Naming Contests' />
+
+          ...
+        </div>
+    );
 };
 
 ReactDOM.render(
-    // This will use defaultProps
     <App />,
-    // <App headerMessage='Hello props!'/>, 
     document.getElementById('root')
 );

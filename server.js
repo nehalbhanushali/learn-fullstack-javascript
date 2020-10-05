@@ -1,6 +1,7 @@
 import config from './config';
 import apiRouter from './api';
 
+//like express there is also koa, hapi, sails
 import express from 'express';
 const server = express();
 
@@ -10,13 +11,12 @@ server.set('view engine', 'ejs');
 // routing
 server.get('/', (req, res) => {
     // res.send('Hello Express');
-    // TODO: Instead of these strings
-    // use dynamic template language like EJS
-    // a new dependency to be brought in 
+    // TODO: Instead of these strings use dynamic template language like EJS
+    // pug, handlebars, etc 
     // res.render('index');
     // or pass variables
     res.render('index', {
-       content: 'Hello Express and <em>EJS</em>!'
+       content: '___'
     });
 
  });
